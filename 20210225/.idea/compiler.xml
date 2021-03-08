@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ClassesPractice" />
+        <module name="Calculator (1)" />
+        <module name="U1M2L3Katas" />
+        <module name="Calculator" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Calculator" target="1.8" />
+      <module name="Calculator (1)" target="1.8" />
+      <module name="ClassesPractice" target="1.8" />
+      <module name="U1M2L3Katas" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
