@@ -98,7 +98,7 @@ public class GameDaoJdbcImplementationTest {
         Game game1 = new Game();
         game1.setTitle("Need for Speed");
         game1.setEsrb_rating("T");
-        game1.setDescription("Put your crocs into race car more and go vroom vroom");
+        game1.setDescription("Put your crocs into race car mode and go vroom vroom");
         game1.setPrice(new BigDecimal("1.49"));
         game1.setStudio("Slightly Mad Studio");
         game1.setQuantity(0);

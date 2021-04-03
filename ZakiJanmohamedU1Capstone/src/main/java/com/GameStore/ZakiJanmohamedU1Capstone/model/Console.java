@@ -1,5 +1,6 @@
 package com.GameStore.ZakiJanmohamedU1Capstone.model;
 
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.util.Objects;
 
@@ -11,6 +12,7 @@ public class Console {
     private String memory_amount;
     private String processor;
     private BigDecimal price;
+    @Positive
     private int quantity;
 
     public int getConsole_id() {

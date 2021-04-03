@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface GameDao {
 
-    Game addGame(Game game); //
+    Game addGame(Game game);
 
-    Game getGame(int game_id);//
+    Game getGame(int game_id);
 
-    List<Game> getAllGame();//
+    List<Game> getAllGame();
 
-    void updateGame(Game game); //
+    void updateGame(Game game);
 
-    void deleteGame(int game_id);//
+    void deleteGame(int game_id);
 
     List<Game> getGamesByStudio(String studio);
 
