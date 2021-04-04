@@ -54,10 +54,8 @@ public class InvoiceDaoJdbcImplementationTest {
     }
 
     @Test
-    public void shouldAddGetDeleteInvoice(){
+    public void shouldAddDeleteInvoice(){
         invoice = invoiceDao.addInvoice(invoice);
-        Invoice invoice1 = invoiceDao.getInvoice(invoice.getInvoice_id());
-        assertEquals(invoice1,invoice);
         invoiceDao.deleteInvoice(invoice.getInvoice_id());
     }
 
@@ -86,23 +84,5 @@ public class InvoiceDaoJdbcImplementationTest {
         assertEquals(2,invoiceList.size());
     }
 
-    @Test
-    public void shouldUpdateInvoice(){
 
-        invoice = invoiceDao.addInvoice(invoice);
-
-        invoice.setName("Joe Cup");
-        invoice.setStreet("Coffee road.");
-        invoice.setCity("Mug");
-        invoice.setState("TX");
-        invoice.setZipcode("00003");
-        invoice.setItem_type("t-shirt");
-        invoice.setItem_id(3);
-
-        invoiceDao.updateInvoice(invoice);
-
-        Invoice invoice1 = invoiceDao.getInvoice(invoice.getInvoice_id());
-        assertEquals(invoice1,invoice);
-
-    }
 }

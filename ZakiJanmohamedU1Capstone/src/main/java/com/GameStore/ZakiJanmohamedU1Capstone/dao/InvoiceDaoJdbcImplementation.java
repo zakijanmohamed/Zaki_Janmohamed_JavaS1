@@ -19,14 +19,8 @@ public class InvoiceDaoJdbcImplementation implements InvoiceDao {
     private static final String INSERT_INVOICE_SQL =
             "insert into invoice (name, street, city, state, zipcode, item_type, item_id, unit_price, quantity, subtotal, tax, processing_fee, total) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    private static final String SELECT_INVOICE_SQL =
-            "select * from invoice where invoice_id = ?";
-
     private static final String SELECT_ALL_INVOICE_SQL =
             "select * from invoice";
-
-    private static final String UPDATE_INVOICE_SQL =
-            "update invoice set name = ?, street = ?, city = ?, state = ?, zipcode = ?, item_type = ?, item_id = ?, unit_price = ?, quantity = ?, subtotal = ?, tax = ?, processing_fee = ?, total =? where invoice_id = ?";
 
     private static final String DELETE_INVOICE =
             "delete from invoice where invoice_id = ?";
@@ -63,39 +57,10 @@ public class InvoiceDaoJdbcImplementation implements InvoiceDao {
         return invoice;
     }
 
-    @Override
-    public Invoice getInvoice(int invoice_id) {
-        try {
-            return jdbcTemplate.queryForObject(SELECT_INVOICE_SQL, this::mapRowToInvoice, invoice_id);
-        } catch (EmptyResultDataAccessException e) {
-            return null;
-        }
-    }
 
     @Override
     public List<Invoice> getAllInvoices() {
         return jdbcTemplate.query(SELECT_ALL_INVOICE_SQL, this::mapRowToInvoice);
-    }
-
-    @Override
-    public void updateInvoice(Invoice invoice) {
-        jdbcTemplate.update(
-                UPDATE_INVOICE_SQL,
-                invoice.getName(),
-                invoice.getStreet(),
-                invoice.getCity(),
-                invoice.getState(),
-                invoice.getZipcode(),
-                invoice.getItem_type(),
-                invoice.getItem_id(),
-                invoice.getUnit_price(),
-                invoice.getQuantity(),
-                invoice.getSubtotal(),
-                invoice.getTax(),
-                invoice.getProcessing_fee(),
-                invoice.getTotal(),
-                invoice.getInvoice_id());
-
     }
 
     @Override

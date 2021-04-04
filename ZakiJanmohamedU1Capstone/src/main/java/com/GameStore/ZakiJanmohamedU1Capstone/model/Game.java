@@ -1,16 +1,31 @@
 package com.GameStore.ZakiJanmohamedU1Capstone.model;
 
+import nonapi.io.github.classgraph.json.Id;
+
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Game {
 
+    @NotNull
     private int game_id;
+    @NotEmpty(message = "You must supply a title for the game.")
+    @Size(max = 50, message = "The title can only be up to 50 characters.")
     private String title;
+    @NotEmpty(message = "You must supply an ESRB rating for the game.")
+    @Size(max = 50, message = "The model can only be up to 50 characters.")
     private String esrb_rating;
+    @NotEmpty(message = "You must supply a description for the game.")
+    @Size(max = 255, message = "The model can only be up to 255 characters.")
     private String description;
+    @DecimalMin(value ="0.01",message = "The price must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your total cannot be larger than $99,999.99")
     private BigDecimal price;
+    @NotEmpty(message = "You must supply a studio for the game.")
+    @Size(max = 50, message = "The studio can only be up to 50 characters.")
     private String studio;
+    @Positive(message = "You must supply a value equals to, or greater than 1 for the quantity.")
     private int quantity;
 
     public int getGame_id() {

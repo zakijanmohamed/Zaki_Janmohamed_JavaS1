@@ -1,15 +1,28 @@
 package com.GameStore.ZakiJanmohamedU1Capstone.model;
 
+import nonapi.io.github.classgraph.json.Id;
+
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class T_Shirt {
 
+    @NotNull
     private int t_shirt_id;
+    @NotEmpty(message = "You must supply a size for the T-Shirt.")
+    @Size(max = 20, message = "The size can only be up to 20 characters.")
     private String size;
+    @NotEmpty(message = "You must supply a color for the T-Shirt.")
+    @Size(max = 20, message = "The color can only be up to 20 characters.")
     private String color;
+    @NotEmpty(message = "You must supply a description for the T-Shirt.")
+    @Size(max = 255, message = "The description can only be up to 20 characters.")
     private String description;
+    @DecimalMin(value ="1",message = "The price must be greater than 1")
+    @Digits(integer = 5,fraction = 2,message = "Your price cannot be larger than $99,999.99")
     private BigDecimal price;
+    @Positive(message = "You must supply a value equals to, or greater than 1 for the quantity.")
     private int quantity;
 
     public int getT_shirt_id() {

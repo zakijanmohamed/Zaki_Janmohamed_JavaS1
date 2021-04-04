@@ -1,18 +1,31 @@
 package com.GameStore.ZakiJanmohamedU1Capstone.model;
 
-import javax.validation.constraints.Positive;
+import nonapi.io.github.classgraph.json.Id;
+
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Console {
 
+    @NotNull
     private int console_id;
+    @NotEmpty(message = "You must supply a model for the console.")
+    @Size(max = 50, message = "The model can only be up to 50 characters.")
     private String model;
+    @NotEmpty(message = "You must supply a manufacturer for the console.")
+    @Size(max = 50, message = "The manufacturer can only be up to 50 characters.")
     private String manufacturer;
+    @NotEmpty(message = "You must supply a memory amount for the console.")
+    @Size(max = 20, message = "The memory amount can only be up to 20 characters.")
     private String memory_amount;
+    @NotEmpty(message = "You must supply a processor for the console.")
+    @Size(max = 20, message = "The processor can only be up to 20 characters.")
     private String processor;
+    @DecimalMin(value ="0.01",message = "The price must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your total cannot be larger than $99,999.99")
     private BigDecimal price;
-    @Positive
+    @Positive (message = "You must supply a value equals to, or greater than 1 for the quantity.")
     private int quantity;
 
     public int getConsole_id() {

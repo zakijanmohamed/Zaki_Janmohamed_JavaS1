@@ -1,23 +1,51 @@
 package com.GameStore.ZakiJanmohamedU1Capstone.model;
 
+import nonapi.io.github.classgraph.json.Id;
+
+import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Invoice {
 
+    @NotNull
     private int invoice_id;
+    @NotEmpty(message = "You must supply a name for the invoice.")
+    @Size(max = 80, message = "The name can only be up to 80 characters.")
     private String name;
+    @NotEmpty(message = "You must supply a street for the invoice.")
+    @Size(max = 30, message = "The street can only be up to 30 characters.")
     private String street;
+    @NotEmpty(message = "You must supply a city for the invoice.")
+    @Size(max = 30, message = "The city can only be up to 30 characters.")
     private String city;
+    @NotEmpty(message = "You must supply the two-letter abbreviations for your state.")
+    @Size(max = 2, message = "The state must be 2 characters.")
     private String state;
+    @NotEmpty(message = "You must supply a zipcode for the invoice.")
+    @Size(max = 5, message = "The zipcode can only be up to 5 characters.")
     private String zipcode;
+    @NotEmpty(message = "You must supply an item type for the invoice.")
+    @Size(max = 20, message = "The item type can only be up to 20 characters.")
     private String item_type;
+    @NotNull
     private int item_id;
+    @DecimalMin(value = "0.01", message = "The price must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your total cannot be larger than $99,999.99")
     private BigDecimal unit_price;
+    @Positive (message = "You must supply a value equals to, or greater than 1 for the quantity.")
     private int quantity;
+    @DecimalMin(value = "0.01", message = "The subtotal must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your subtotal cannot be larger than $99,999.99")
     private BigDecimal subtotal;
+    @DecimalMin(value = "0.01", message = "The tax must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your tax cannot be larger than $99,999.99")
     private BigDecimal tax;
+    @DecimalMin(value = "0.01", message = "The processing fee must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your processing cannot be larger than $99,999.99")
     private BigDecimal processing_fee;
+    @DecimalMin(value = "0.01", message = "The total must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your total cannot be larger than $99,999.99")
     private BigDecimal total;
 
     public int getInvoice_id() {

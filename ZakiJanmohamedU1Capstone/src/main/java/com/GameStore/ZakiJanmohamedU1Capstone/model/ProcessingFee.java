@@ -1,11 +1,19 @@
 package com.GameStore.ZakiJanmohamedU1Capstone.model;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.util.Objects;
 
 public class ProcessingFee {
 
+    @NotBlank(message = "You must supply the product type.")
+    @Size(min = 2, max = 2)
     private  String product_type;
+    @DecimalMin(value ="0.01",message = "The processing fee must be a positive non-zero value.")
+    @Digits(integer = 5,fraction = 2,message = "Your total cannot be larger than $99,999.99")
     private BigDecimal fee;
 
     public String getProduct_type() {
