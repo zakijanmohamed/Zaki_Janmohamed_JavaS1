@@ -6,6 +6,7 @@ import com.GameStore.ZakiJanmohamedU1Capstone.model.Game;
 import com.GameStore.ZakiJanmohamedU1Capstone.model.Invoice;
 import com.GameStore.ZakiJanmohamedU1Capstone.model.T_Shirt;
 import io.swagger.v3.oas.models.security.SecurityScheme;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -169,6 +170,12 @@ public class InvoiceInventoryServiceTest {
 
     @Test
     public void shouldAddGetDeleteConsole(){
+
+//        consoleDao.addConsole(invoiceInventoryService.console);
+//        Console console =consoleDao.getConsole(consoleDao.getConsole());
+//        assertEquals(console,consoleDao);
+//        consoleDao.deleteConsole(console.getConsole_id());
+
     }
 
     }

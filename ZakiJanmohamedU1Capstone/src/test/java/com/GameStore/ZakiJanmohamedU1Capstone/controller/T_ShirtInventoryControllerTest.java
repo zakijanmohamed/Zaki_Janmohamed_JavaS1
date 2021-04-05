@@ -34,9 +34,11 @@ public class T_ShirtInventoryControllerTest {
     private T_Shirt outputT_shirt;
 
 
-    private ObjectMapper mapper = new ObjectMapper();
+
     @MockBean
     private InvoiceInventoryService serviceLayer;
+
+    private ObjectMapper mapper = new ObjectMapper();
 
     @Before
     public void setUp() throws Exception {
@@ -44,7 +46,7 @@ public class T_ShirtInventoryControllerTest {
     }
 
     public void setUpTestObject() {
-        T_Shirt inputT_shirt = new T_Shirt();
+         inputT_shirt = new T_Shirt();
         inputT_shirt.setColor("Black");
         inputT_shirt.setSize("Large");
         inputT_shirt.setDescription("Black T_shirt");
@@ -117,16 +119,22 @@ public class T_ShirtInventoryControllerTest {
 
     @Test
     public void updateT_shirt() throws Exception {
-        String inputJsonString = mapper.writeValueAsString(inputT_shirt);
 
-        when(serviceLayer.addT_shirt(inputT_shirt)).thenReturn(outputT_shirt);
-        mockMvc.perform(
-                put("/t_shirt/{t_shirt_id}")
-                        .content(inputJsonString)
-                        .contentType(MediaType.APPLICATION_JSON)
-        )
-                .andDo(print())
-                .andExpect(status().isOk());
+        T_Shirt t_shirt = new T_Shirt();
+        t_shirt.setColor("Black");
+        t_shirt.setSize("Large");
+        t_shirt.setDescription("Black T_shirt");
+        t_shirt.setPrice(new BigDecimal("2.99"));
+        t_shirt.setQuantity(1);
+        t_shirt.setT_shirt_id(1);
+
+        String inputJsonString = mapper.writeValueAsString(t_shirt);
+        String outputJsonString =mapper.writeValueAsString(t_shirt);
+
+        this.mockMvc.perform(put("t_shirt/{t_shirt_id}"+t_shirt.getT_shirt_id())
+                .content(inputJsonString)
+                .contentType(MediaType.APPLICATION_JSON))
+                .andDo(print()).andExpect(status().isOk());
     }
 
     @Test
