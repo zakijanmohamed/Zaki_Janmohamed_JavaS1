@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="adserver-service" />
+        <module name="EurekaServiceRegistry" />
+        <module name="tasker-service" />
+        <module name="SummativeConfigService" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="adserver-service" target="1.8" />
+      <module name="EurekaServiceRegistry" target="1.8" />
+      <module name="SummativeConfigService" target="1.8" />
+      <module name="tasker-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="EurekaServiceRegistry" options="-parameters" />
+      <module name="SummativeConfigService" options="-parameters" />
+      <module name="adserver-service" options="-parameters" />
+      <module name="tasker-service" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+Summative Documentation:
+
+-Tasker Service:
+	- port:4242
+
+-Tasker Service Test:
+	-port:8181
+
+-Service Registry:
+	-port:8761
+
+-Config Server:
+	-port:9999
+
+-Ad Server:
+	-port:6107
+
+
+https://github.com/zakijanmohamed/zaki-janmohamed-cloud-config-repo

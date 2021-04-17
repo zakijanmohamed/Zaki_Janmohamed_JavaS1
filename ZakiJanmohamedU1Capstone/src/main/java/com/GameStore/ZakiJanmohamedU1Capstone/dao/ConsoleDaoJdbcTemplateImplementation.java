@@ -36,7 +36,7 @@ public class ConsoleDaoJdbcTemplateImplementation  implements ConsoleDao{
 
     @Autowired
     public ConsoleDaoJdbcTemplateImplementation(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;}
+        this.jdbcTemplate = jdbcTemplate; }
 
     @Override
     @Transactional
