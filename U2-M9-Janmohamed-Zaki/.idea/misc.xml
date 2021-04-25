@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/starter-code/ConfigServer/pom.xml" />
+        <option value="$PROJECT_DIR$/starter-code/post-service/pom.xml" />
+        <option value="$PROJECT_DIR$/starter-code/EurekaRegistry/pom.xml" />
+        <option value="$PROJECT_DIR$/starter-code/comment-service/pom.xml" />
+        <option value="$PROJECT_DIR$/starter-code/stwitter-service/pom.xml" />
+        <option value="$PROJECT_DIR$/starter-code/que-consumer/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

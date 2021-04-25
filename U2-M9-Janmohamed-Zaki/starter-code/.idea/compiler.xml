@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="EurekaRegistry" />
+        <module name="post-service" />
+        <module name="comment-service" />
+        <module name="ConfigServer" />
+        <module name="que-consumer" />
+        <module name="stwitter-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="comment-service" target="1.8" />
+      <module name="ConfigServer" target="1.8" />
+      <module name="EurekaRegistry" target="1.8" />
+      <module name="post-service" target="1.8" />
+      <module name="que-consumer" target="1.8" />
+      <module name="stwitter-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ConfigServer" options="-parameters" />
+      <module name="EurekaRegistry" options="-parameters" />
+      <module name="comment-service" options="-parameters" />
+      <module name="post-service" options="-parameters" />
+      <module name="que-consumer" options="-parameters" />
+      <module name="stwitter-service" options="-parameters" />
+    </option>
+  </component>
+</project>
