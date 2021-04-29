@@ -2,6 +2,7 @@ package com.GameStore.ZakiJanmohamedU1Capstone.controller;
 
 
 import com.GameStore.ZakiJanmohamedU1Capstone.dao.GameDao;
+import com.GameStore.ZakiJanmohamedU1Capstone.model.Console;
 import com.GameStore.ZakiJanmohamedU1Capstone.model.Game;
 import com.GameStore.ZakiJanmohamedU1Capstone.service.InvoiceInventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +28,10 @@ public class GameInventoryController {
     }
 
     //getById
-    @RequestMapping(value = "/game/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/game/id/{id}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public Game getGameById (@PathVariable int game_id){
-        return inventoryService.getGameById(game_id);
+    public Game getGameById (@PathVariable int id){
+        return inventoryService.getGameById(id);
     }
 
     //getAll
@@ -51,8 +52,8 @@ public class GameInventoryController {
     //getByRating
     @RequestMapping(value = "/game/rating/{rating}", method = RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public List<Game> getGameByRating (@PathVariable String esrb_rating){
-        return inventoryService.findGamesByRating(esrb_rating);
+    public List<Game> getGameByRating (@PathVariable String rating){
+        return inventoryService.findGamesByRating(rating);
     }
 
     //getByTitle
@@ -70,9 +71,9 @@ public class GameInventoryController {
     }
 
     //update
-    @RequestMapping(value = "/game/update/{game_id}", method =RequestMethod.PUT)
+    @RequestMapping(value = "/game/{game_id}", method =RequestMethod.PUT)
     @ResponseStatus (value = HttpStatus.OK)
-    public void updateGame (@PathVariable Game game){
+    public void updateGame (@PathVariable int game_id,@RequestBody Game game){
         inventoryService.UpdatesGame(game);
     }
 
