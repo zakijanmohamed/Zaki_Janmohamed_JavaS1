@@ -1,0 +1,11 @@
+h1 {
+  width: auto;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  background: rgb(56, 54, 54);
+}
+body {
+  background-color: rgba(45, 143, 189, .445);
+}
+

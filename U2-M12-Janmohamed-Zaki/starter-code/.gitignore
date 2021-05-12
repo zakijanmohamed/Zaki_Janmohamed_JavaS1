@@ -1,0 +1,10 @@
+.DS_Store
+.cache
+dist
+node_modules
+*.sw*
+.env
+
+.eslintcache
+# Dependency directories
+node_modules/
